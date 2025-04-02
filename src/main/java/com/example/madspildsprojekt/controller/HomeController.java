@@ -12,5 +12,21 @@ public class HomeController
         return "home/index";
     }
 
-    // test //
+    @GetMapping("privatbruger")
+    public String privatbruger()
+    {
+        return "home/privatbruger";
+    }
+
+    @GetMapping("virksomhed")
+    public String virksomhed()
+    {
+        return "home/virksomhed";
+    }
+
+    @GetMapping("organisation")
+    public String organisation()
+    {
+        return "home/organisation";
+    }
 }
