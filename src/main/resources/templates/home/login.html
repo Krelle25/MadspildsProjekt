@@ -13,12 +13,19 @@
 </header>
 
 <main>
-    <form action="/login" method="post">
-        <label for="brugernavn">Brugernavn:</label>
+    <form action="login" method="post">
+        <label for="brugernavn">Brugernavn</label>
         <input type="text" id="brugernavn" name="brugernavn" required>
 
+        <label for="adgangskode">Adgangskode</label>
+        <input type="password" id="adgangskode" name="adgangskode" required>
+
+        <button type="submit">Login</button>
     </form>
+
     <p>Har du ikke en konto? <a href="/opret">Opret en her</a></p>
+
+    <p><a href="/">Tilbage til forsiden</a></p>
 </main>
 
 <footer>
