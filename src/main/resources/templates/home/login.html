@@ -2,10 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login - Danmark Mod Madspild</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="login">
+
+<header>
+    <h1>Danmark Mod Madspild</h1>
+    <p>Login til din konto</p>
+</header>
+
+<main>
+    <form action="/login" method="post">
+        <label for="brugernavn">Brugernavn:</label>
+        <input type="text" id="brugernavn" name="brugernavn" required>
+
+    </form>
+    <p>Har du ikke en konto? <a href="/opret">Opret en her</a></p>
+</main>
+
+<footer>
+    Copyright © DanmarkModMadspild ApS. All Rights Reserved.
+</footer>
 
 </body>
 </html>
