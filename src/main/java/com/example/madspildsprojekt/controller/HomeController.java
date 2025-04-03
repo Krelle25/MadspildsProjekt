@@ -29,30 +29,34 @@ public class HomeController
     {
         return "home/organisation";
     }
+
     @GetMapping("opret")
     public String opret()
     {
         return "home/opret";
     }
+
     @GetMapping("login")
     public String login()
     {
         return "home/login";
     }
+
     @GetMapping("privatinfo")
     public String privatinfo()
     {
         return "home/privatinfo";
     }
+
     @GetMapping("opslagstavle")
     public String opslagstavle()
     {
         return "home/opslagstavle";
     }
+
     @GetMapping("tilmeldevent")
     public String tilmeldevent()
     {
         return "home/tilmeldevent";
     }
-
 }
