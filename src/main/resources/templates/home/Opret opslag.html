@@ -5,7 +5,17 @@
     <title>Title</title>
 </head>
 <body>
+<main>
+    <form action="/opret" method="post">
+        <label for="opslag overskrift">Brugernavn</label>
+        <input type="text" id="opslag overskrift" name="opslag" required>
 
+        <label for="opslag info">Adgangskode</label>
+        <input type="password" id="opslag info" name="info" required>
 
+        <button type="submit">Slå op</button>
+    </form>
+    <p><a href="/">Tilbage til forsiden</a></p>
+</main>
 </body>
 </html>
