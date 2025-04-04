@@ -30,22 +30,34 @@ public class HomeController
         return "home/organisation";
     }
 
-    @GetMapping("opret")
-    public String opret()
-    {
-        return "home/opret";
-    }
-
     @GetMapping("login")
     public String login()
     {
         return "home/login";
     }
 
+    @GetMapping("opret")
+    public String opret()
+    {
+        return "home/opret";
+    }
+
     @GetMapping("privatinfo")
     public String privatinfo()
     {
         return "home/privatinfo";
+    }
+
+    @GetMapping("organisationinfo")
+    public String organisationinfo()
+    {
+        return "home/organisationinfo";
+    }
+
+    @GetMapping("virksomhedinfo")
+    public String virksomhedinfo()
+    {
+        return "home/virksomhedinfo";
     }
 
     @GetMapping("opslagstavle")
@@ -64,17 +76,5 @@ public class HomeController
     public String opretopslag()
     {
         return "home/opretopslag";
-    }
-
-    @GetMapping("organisationinfo")
-    public String organisationinfo()
-    {
-        return "home/organisationinfo";
-    }
-
-    @GetMapping("virksomhedinfo")
-    public String virksomhedinfo()
-    {
-        return "home/virksomhedinfo";
     }
 }
