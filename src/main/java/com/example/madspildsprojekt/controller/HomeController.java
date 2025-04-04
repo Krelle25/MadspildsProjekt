@@ -59,4 +59,22 @@ public class HomeController
     {
         return "home/tilmeldevent";
     }
+
+    @GetMapping("opretopslag")
+    public String opretopslag()
+    {
+        return "home/opretopslag";
+    }
+
+    @GetMapping("organisationinfo")
+    public String organisationinfo()
+    {
+        return "home/organisationinfo";
+    }
+
+    @GetMapping("virksomhedinfo")
+    public String virksomhedinfo()
+    {
+        return "home/virksomhedinfo";
+    }
 }
