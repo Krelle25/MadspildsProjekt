@@ -78,4 +78,7 @@ public class HomeController
     {
         return "home/opretopslag";
     }
+
+    @GetMapping("opretevent")
+    public String opretevent() {return "home/opretevent";}
 }
