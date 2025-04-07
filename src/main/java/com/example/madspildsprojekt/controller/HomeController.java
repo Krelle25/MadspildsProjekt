@@ -134,8 +134,7 @@ public class HomeController
     }
 
     @GetMapping("opretevent")
-    public String opretevent(HttpSession session)
-    {
+    public String opretevent(HttpSession session) {
         if (!Boolean.TRUE.equals(session.getAttribute("loggedIn")))
             return "redirect:/login";
         return "home/opretevent";

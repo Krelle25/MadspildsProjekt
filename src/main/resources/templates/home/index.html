@@ -5,30 +5,40 @@
     <title>Danmark Mod Madspild - Gør Forskellen</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="index">
 
 <header>
-        <h1> Danmark Mod Madspild </h1>
-
-        <div th:if="${session.loggedIn} == null">
-            <a href="/login">Login</a> | <a href="/opret">Opret</a>
+        <div th:if="${session.loggedIn} == null" class="auth-links">
+            <a href="/login" class="btn">Login</a>
+            <a href="/opret" class="btn">Opret</a>
         </div>
 
-        <div th:if="${session.loggedIn}">
+        <div th:if="${session.loggedIn}" class="auth-links">
             <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
-            <a href="/logout">Log ud</a>
+            <a href="/logout" class="btn-logout">Log ud</a>
         </div>
+
+        <h1 class="title">Danmark Mod Madspild</h1>
 </header>
 
 <main>
     <h2>Hvem er du?</h2>
-        <h3> Vælg en af nedenstående </h3>
+        <h3> Vælg en af nedenstående</h3>
 
-    <ul class="aktoer-genveje">
-        <li><a href="/privatbruger">Privat bruger</a></li>
-        <li><a href="/organisation">Organisation</a></li>
-        <li><a href="/virksomhed">Virksomhed</a></li>
-    </ul>
+    <section class="rolle-valg">
+        <a href="/privatbruger" class="rolle-link">
+            <img src="/images/Privat%20Bruger%20-%20MadspildsProjekt.jpg" alt="Privat Bruger">
+            <p>Privat Bruger</p>
+        </a>
+        <a href="/organisation" class="rolle-link">
+            <img src="/images/Organisation%20-%20MadspildsProjekt.png" alt="Organisation">
+            <p>Organisation</p>
+        </a>
+        <a href="/virksomhed" class="rolle-link">
+            <img src="/images/Virksomhed%20-%20MadspildsProjekt.png" alt="Virksomhed">
+            <p>Virksomhed</p>
+        </a>
+    </section>
 </main>
 
 <footer>Copyright © DanmarkModMadspild ApS. All Rights Reserved.</footer>

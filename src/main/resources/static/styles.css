@@ -1,5 +1,137 @@
 /* Styles for startsiden/forsiden */
 
+body {
+    font-family: Cambria;
+    text-align: center;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.index main {
+    padding-bottom: 6em;
+}
+
+header {
+    position: relative;
+    background-color: #6DCB85;
+    padding: 2em 1em;
+    text-align: center;
+}
+
+/* Overskrift i midten */
+header .title {
+    font-size: 3em;
+    color: white;
+    margin: 0;
+}
+
+/* Login/opret/velkomst oppe i højre hjørne */
+.auth-links {
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.auth-links .btn,
+.auth-links .btn-logout {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+}
+
+.auth-links .btn {
+    background-color: #007f3f;
+}
+
+.auth-links .btn:hover {
+    background-color: #005f2f;
+}
+
+.auth-links .btn-logout {
+    background-color: #a30000;
+}
+
+.auth-links .btn-logout:hover {
+    background-color: #750000;
+}
+
+main h2 {
+    font-size: 2.2em;
+    margin-top: 1.5em;
+}
+
+main h3 {
+    font-weight: normal;
+    color: #555;
+    margin-bottom: 2em;
+}
+
+.rolle-valg {
+    display: flex;
+    justify-content: center;
+    gap: 4em;
+    margin: 3em auto;
+    flex-wrap: wrap;
+    max-width: 1000px;
+}
+
+.rolle-link {
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease;
+    width: 250px;
+}
+
+.rolle-link img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rolle-link:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.rolle-link p {
+    margin-top: 0.8em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #2e2e2e;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .rolle-valg {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .auth-links {
+        position: static;
+        margin-top: 1em;
+        justify-content: center;
+    }
+}
+
 /* Styles for login */
 
 /* Styles for opret/registrer */
