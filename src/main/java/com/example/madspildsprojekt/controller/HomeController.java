@@ -111,27 +111,33 @@ public class HomeController
     {
         return "home/virksomhedinfo";
     }
-    @GetMapping("opretevent")
-    public String opretevent()
-    {
-        return "home/opretevent";
-    }
 
     @GetMapping("/opslagstavle")
     public String opslagstavle(HttpSession session) {
-        if (!Boolean.TRUE.equals(session.getAttribute("loggedIn"))) return "redirect:/login";
+        if (!Boolean.TRUE.equals(session.getAttribute("loggedIn")))
+            return "redirect:/login";
         return "home/opslagstavle";
     }
 
     @GetMapping("/tilmeldevent")
     public String tilmeldevent(HttpSession session) {
-        if (!Boolean.TRUE.equals(session.getAttribute("loggedIn"))) return "redirect:/login";
+        if (!Boolean.TRUE.equals(session.getAttribute("loggedIn")))
+            return "redirect:/login";
         return "home/tilmeldevent";
     }
 
     @GetMapping("/opretopslag")
     public String opretopslag(HttpSession session) {
-        if (!Boolean.TRUE.equals(session.getAttribute("loggedIn"))) return "redirect:/login";
+        if (!Boolean.TRUE.equals(session.getAttribute("loggedIn")))
+            return "redirect:/login";
         return "home/opretopslag";
+    }
+
+    @GetMapping("opretevent")
+    public String opretevent(HttpSession session)
+    {
+        if (!Boolean.TRUE.equals(session.getAttribute("loggedIn")))
+            return "redirect:/login";
+        return "home/opretevent";
     }
 }
