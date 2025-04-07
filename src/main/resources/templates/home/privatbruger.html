@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Privat Bruger - Danmark Mod Madspild</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="privatbruger">
 
 <main class="privatbruger-con">
-    <h1>Privat Bruger</h1>
 
+    <h1>Privat Bruger</h1>
     <h2>Undgå madspild og køb et måltid eller tilmeld dig gratis event!</h2>
 
-    <ul class="links-genveje">
-        <li><a href="privatinfo">Tips: Undgå madspild</a></li>
-        <li><a href="login">Login</a></li>
-        <li><a href="opret">Registrer</a></li>
+    <ul class="links-genveje" th:if="${session.loggedIn} == null">
+        <li><a href="/privatinfo">Tips: Undgå madspild</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/opret">Registrer</a></li>
     </ul>
+
+    <div th:if="${session.loggedIn} and ${session.brugerType} == 'privatbruger'">
+        <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
+
+        <ul class="links-genveje">
+            <li><a href="/privatinfo">Tips: Undgå madspild</a></li>
+            <li><a href="/opslagstavle">Se opslagstavle</a></li>
+            <li><a href="/tilmeldevent">Tilmeld dig et event</a></li>
+            <li><a href="/logout">Log ud</a></li>
+        </ul>
+    </div>
 
     <p><a href="/">Tilbage til forsiden</a></p>
 </main>

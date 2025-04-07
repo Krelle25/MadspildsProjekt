@@ -8,23 +8,26 @@
 <body>
 
 <header>
-    <div class="header-top">
         <h1> Danmark Mod Madspild </h1>
-        <div class="id-links">
-            <a href="login">Login</a>
-            <a href="opret">Registrer</a>
+
+        <div th:if="${session.loggedIn} == null">
+            <a href="/login">Login</a> | <a href="/opret">Opret</a>
         </div>
-    </div>
-    <p>Velkommen til Danmark Mod Madspild - Vi Bekæmper Madspild</p>
+
+        <div th:if="${session.loggedIn}">
+            <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
+            <a href="/logout">Log ud</a>
+        </div>
 </header>
+
 <main>
-    <h2>xxx</h2>
+    <h2>Hvem er du?</h2>
         <h3> Vælg en af nedenstående </h3>
 
     <ul class="aktoer-genveje">
-        <li><a href="privatbruger">Privat bruger</a></li>
-        <li><a href="organisation">Organisation</a></li>
-        <li><a href="virksomhed">Virksomhed</a></li>
+        <li><a href="/privatbruger">Privat bruger</a></li>
+        <li><a href="/organisation">Organisation</a></li>
+        <li><a href="/virksomhed">Virksomhed</a></li>
     </ul>
 </main>
 

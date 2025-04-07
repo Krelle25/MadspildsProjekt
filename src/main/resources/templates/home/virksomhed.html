@@ -9,16 +9,26 @@
 
 <main class="virksomhed-con">
     <h1>Virksomhed</h1>
-
     <h2>Dóner overskudsmad eller samarbejd om madspild</h2>
 
-    <ul class="links-genveje">
+    <ul class="links-genveje" th:if="${session.loggedIn} == null">
         <li><a href="virksomhedinfo">Sådan gør din virksomhed en forskel</a></li>
         <li><a href="login">Login</a></li>
         <li><a href="opret">Registrer virksomhed</a></li>
     </ul>
 
-    <p><a href="/">Tilbage til forsiden</a></p>
+    <div th:if="${session.loggedIn} and ${session.brugerType} == 'virksomhed'">
+        <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
+
+        <ul class="links-genveje">
+            <li><a href="virksomhedinfo">Sådan gør din virksomhed en forskel</a></li>
+            <li><a href="opslagstavle">Se opslagstavle</a></li>
+            <li><a href="opretopslag">Opret opslag</a></li>
+            <li><a href="logout">Log ud</a></li>
+        </ul>
+    </div>
+
+        <p><a href="/">Tilbage til forsiden</a></p>
 </main>
 
 </body>
