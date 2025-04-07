@@ -111,6 +111,11 @@ public class HomeController
     {
         return "home/virksomhedinfo";
     }
+    @GetMapping("opretevent")
+    public String opretevent()
+    {
+        return "home/opretevent";
+    }
 
     @GetMapping("/opslagstavle")
     public String opslagstavle(HttpSession session) {
