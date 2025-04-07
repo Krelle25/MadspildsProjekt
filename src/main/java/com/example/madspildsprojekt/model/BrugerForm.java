@@ -5,7 +5,6 @@ public class BrugerForm {
     private String adgangskode;
     private String rolle;
 
-    // Getters og setters
     public String getBrugernavn() {
         return brugernavn;
     }

@@ -5,17 +5,33 @@
     <title>Title</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="opretopslag">
+<header>
+    <h1>Danmark Mod Madspild</h1>
+    <p>Opret produkt</p>
+</header>
+
 <main>
     <form action="/opret" method="post">
-        <label for="opslag overskrift">Brugernavn</label>
+        <label for="opslag overskrift">Titel</label>
         <input type="text" id="opslag overskrift" name="opslag" required>
 
-        <label for="opslag info">Adgangskode</label>
-        <input type="password" id="opslag info" name="info" required>
+        <p></p><label for="opslag info">Beskrivelse af produkt</label>
+        <input type="Opretopslag" id="opslag info" name="info" required><p></p>
 
-        <button type="submit">Slå op</button>
+        <label for="antal maaltider">Antal produkter/måltider</label>
+        <input type="Opretopslag" id="antal maaltider" name="antal" required>
+
+       <p></p> <label for="dato">Dato</label>
+        <input type="Opretopslag" id="dato" name="dato" required><p></p>
+
+        <label for="tidspunkt">Tidspunkt</label>
+        <input type="Opretopslag" id="tidspunkt" name="tidspunkt" required>
+
     </form>
+        <p></p><button type="submit">Slå op</button><p></p>
+
+
     <p><a href="/">Tilbage til forsiden</a></p>
 </main>
 </body>
