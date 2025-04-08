@@ -7,29 +7,18 @@
 </head>
 <body class="opret">
 
-<header>
-    <h1>Danmark Mod Madspild</h1>
-    <p>Registrer din konto</p>
-</header>
-
-<main>
+<main class="opret-container">
+    <h1>Registrer din konto</h1>
     <form action="/opret" method="post">
-        <label for="brugernavn">Brugernavn</label>
-        <input type="text" id="brugernavn" name="brugernavn" required>
+        <fieldset class="roller">
+            <legend>Vælg brugerrolle:</legend>
+            <label><input type="radio" id="privat" name="rolle" value="privatbruger" required> Privat bruger</label>
+            <label><input type="radio" id="organisation" name="rolle" value="organisation" required> Organisation</label>
+            <label><input type="radio" id="virksomhed" name="rolle" value="virksomhed" required> Virksomhed</label>
+        </fieldset>
 
-        <label for="adgangskode">Adgangskode</label>
-        <input type="password" id="adgangskode" name="adgangskode" required>
-
-        <p>Vælg brugerrolle:</p>
-
-        <input type="radio" id="privat" name="rolle" value="privatbruger" required>
-        <label for="privat">Privat bruger</label>
-
-        <input type="radio" id="organisation" name="rolle" value="organisation" required>
-        <label for="organisation">Organisation</label>
-
-        <input type="radio" id="virksomhed" name="rolle" value="virksomhed" required>
-        <label for="virksomhed">Virksomhed</label>
+        <input type="text" id="brugernavn" name="brugernavn" placeholder="Brugernavn" required>
+        <input type="password" id="adgangskode" name="adgangskode" placeholder="Adgangskode" required>
 
         <button type="submit">Registrer</button>
     </form>
@@ -37,7 +26,7 @@
     <p th:if="${besked}" th:text="${besked}"></p>
 
     <p>Har du allerede en konto? <a href="/login">Login her</a></p>
-    <p><a href="/">Tilbage til forsiden</a></p>
+    <p><a href="/" class="tilbage">Tilbage til forsiden</a></p>
 </main>
 
 <footer>

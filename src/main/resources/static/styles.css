@@ -63,8 +63,8 @@ header .title {
 }
 
 main h2 {
-    font-size: 2.2em;
-    margin-top: 1.5em;
+    font-size: 2em;
+    margin-top: 1em;
 }
 
 main h3 {
@@ -134,4 +134,164 @@ footer {
 
 /* Styles for login */
 
+.login {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.login-container {
+    background-color: white;
+    padding: 2.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 1.2em;
+    font-size: 2em;
+    color: #6DCB85;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.login-container button {
+    padding: 0.8em;
+    background-color: green;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.login-container button:hover {
+    background-color: darkgreen;
+}
+
+.login-container p {
+    margin-top: 1em;
+    font-size: 0.95em;
+}
+
+.login-container .tilbage {
+    display: block;
+    margin-top: 0.8em;
+    font-size: 0.9em;
+    color: green;
+    text-decoration: none;
+}
+
+.login-container .tilbage:hover {
+    text-decoration: underline;
+}
+
 /* Styles for opret/registrer */
+
+.opret {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 79vh;
+}
+
+.opret-container {
+    background-color: white;
+    padding: 2.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.opret-container h1 {
+    margin-bottom: 1.2em;
+    font-size: 2em;
+    color: green;
+}
+
+.opret-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.opret-container input[type="text"],
+.opret-container input[type="password"] {
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.opret-container button {
+    padding: 0.8em;
+    background-color: green;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.opret-container button:hover {
+    background-color: darkgreen;
+}
+
+.roller {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5em;
+    text-align: left;
+}
+
+.roller {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.roller legend {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.opret-container p {
+    margin-bottom: 1em;
+    font-size: 0.95em;
+}
+
+.opret-container .tilbage {
+    display: block;
+    margin-top: 0.8em;
+    font-size: 0.9em;
+    color: green;
+    text-decoration: none;
+}
+
+.opret-container .tilbage:hover {
+    text-decoration: underline;
+}

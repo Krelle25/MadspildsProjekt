@@ -7,20 +7,11 @@
 </head>
 <body class="login">
 
-<header>
-    <h1>Danmark Mod Madspild</h1>
-    <p>Login til din konto</p>
-    <link rel="stylesheet" href="/styles.css">
-</header>
-
-<main>
+<main class="login-container">
+    <h1>Login til din konto</h1>
     <form action="login" method="post">
-        <label for="brugernavn">Brugernavn</label>
-        <input type="text" id="brugernavn" name="brugernavn" required>
-
-        <label for="adgangskode">Adgangskode</label>
-        <input type="password" id="adgangskode" name="adgangskode" required>
-
+        <input type="text" id="brugernavn" name="brugernavn" placeholder="Brugernavn" required>
+        <input type="password" id="adgangskode" name="adgangskode" placeholder="Adgangskode" required>
         <button type="submit">Login</button>
     </form>
 
@@ -28,7 +19,7 @@
 
     <p>Har du ikke en konto? <a href="/opret">Opret en her</a></p>
 
-    <p><a href="/">Tilbage til forsiden</a></p>
+    <p><a href="/" class="tilbage">Tilbage til forsiden</a></p>
 </main>
 
 <footer>
