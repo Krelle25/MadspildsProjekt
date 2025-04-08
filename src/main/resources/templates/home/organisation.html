@@ -17,10 +17,19 @@
         <li><a href="opret">Registrer</a></li>
     </ul>
 
-    <div th:if="${session.loggedIn} and ${session.brugerType} == 'organisation'">
-        <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
+    <div th:if="${session.loggedIn}" class="auth-links">
+        <!-- Profile Icon and Dropdown -->
+        <div class="profile-dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+            <img src="/images/BrugerIcon.png" alt="Profile Icon" class="profile-icon">
+            <div class="dropdown-content" id="dropdownMenu">
+                <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
+                <a href="/profile" class="btn-dropdown-profil">Profil</a>
+                <a href="/logout" class="btn-logout">Log ud</a>
+            </div>
+        </div>
+    </div>
 
-        <ul class="links-genveje">
+    <ul class="links-genveje">
             <li><a href="organisationinfo">Information om madpsild</a></li>
             <li><a href="opslagstavle.html">Se opslagstavle</a></li>
             <li><a href="opretevent.html">Opret event</a></li>
@@ -36,6 +45,16 @@
 
         <p><a href="/">Tilbage til forsiden</a></p>
 </main>
-
+<script>
+    // Toggle dropdown visibility based on mouseover (true to show, false to hide)
+    function toggleDropdown(show) {
+        var dropdown = document.getElementById('dropdownMenu');
+        if (show) {
+            dropdown.classList.add('show');
+        } else {
+            dropdown.classList.remove('show');
+        }
+    }
+</script>
 </body>
 </html>
