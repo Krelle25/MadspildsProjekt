@@ -8,22 +8,29 @@
 <body class="index">
 
 <header>
-        <div th:if="${session.loggedIn} == null" class="auth-links">
-            <a href="/login" class="btn">Login</a>
-            <a href="/opret" class="btn">Opret</a>
-        </div>
+    <div th:if="${session.loggedIn} == null" class="auth-links">
+        <a href="/login" class="btn">Login</a>
+        <a href="/opret" class="btn">Opret</a>
+    </div>
 
-        <div th:if="${session.loggedIn}" class="auth-links">
-            <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
-            <a href="/logout" class="btn-logout">Log ud</a>
+    <div th:if="${session.loggedIn}" class="auth-links">
+        <!-- Profile Icon and Dropdown -->
+        <div class="profile-dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+            <img src="/images/BrugerIcon.png" alt="Profile Icon" class="profile-icon">
+            <div class="dropdown-content" id="dropdownMenu">
+                <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
+                <a href="/profile" class="btn-dropdown-profil">Profil</a>
+                <a href="/logout" class="btn-logout">Log ud</a>
+            </div>
         </div>
+    </div>
 
-        <h1 class="title">Danmark Mod Madspild</h1>
+    <h1 class="title">Danmark Mod Madspild</h1>
 </header>
 
 <main>
     <h2>Hvem er du?</h2>
-        <h3> Vælg en af nedenstående</h3>
+    <h3> Vælg en af nedenstående</h3>
 
     <section class="rolle-valg">
         <a href="/privatbruger" class="rolle-link">
@@ -42,5 +49,18 @@
 </main>
 
 <footer>Copyright © DanmarkModMadspild ApS. All Rights Reserved.</footer>
+
+<script>
+    // Toggle dropdown visibility based on mouseover (true to show, false to hide)
+    function toggleDropdown(show) {
+        var dropdown = document.getElementById('dropdownMenu');
+        if (show) {
+            dropdown.classList.add('show');
+        } else {
+            dropdown.classList.remove('show');
+        }
+    }
+</script>
+
 </body>
 </html>
