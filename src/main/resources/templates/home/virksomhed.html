@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virksomhed - Danmark Mod Madspild</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
@@ -11,13 +12,20 @@
     <h1>Virksomhed</h1>
     <h2>Dóner overskudsmad eller samarbejd om madspild</h2>
 
-    <ul class="links-genveje" th:if="${session.loggedIn} == null">
+    <ul class="links-genveje">
         <li><a href="virksomhedinfo">Sådan gør din virksomhed en forskel</a></li>
         <li><a href="login">Login</a></li>
         <li><a href="opret">Registrer virksomhed</a></li>
     </ul>
 
-    <div th:if="${session.loggedIn} and ${session.brugerType} == 'virksomhed'">
+    <div class="virksomhed-image">
+        <a href="#">
+            <img src="/images/madspild-virksomhed.png" alt="Virksomhed" class="virksomhed-img">
+            <p>Virksomhed</p>
+        </a>
+    </div>
+
+    <div class="virksomhed-logged-in" th:if="${session.loggedIn} and ${session.brugerType} == 'virksomhed'">
         <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
 
         <ul class="links-genveje">
@@ -28,7 +36,7 @@
         </ul>
     </div>
 
-        <p><a href="/">Tilbage til forsiden</a></p>
+    <p><a href="/" class="back-to-home">Tilbage til forsiden</a></p>
 </main>
 
 </body>

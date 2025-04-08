@@ -131,7 +131,175 @@ footer {
         justify-content: center;
     }
 }
+/* Generelle stilarter for kroppen */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Lys grå baggrund for hele siden */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
 
-/* Styles for login */
+/* Hoved container for alle sektioner */
+.virksomhed-con, .organisation-con, .privatbruger-con {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff; /* Hvid baggrund for alle sektioner */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
 
-/* Styles for opret/registrer */
+/* Titel og undertitel */
+h1 {
+    font-size: 3rem;
+    color: #388e3c;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #4caf50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Links og genveje */
+.links-genveje {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.links-genveje li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.links-genveje a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #388e3c;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #e8f5e9;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.links-genveje a:hover {
+    background-color: #388e3c;
+    color: #fff;
+}
+
+/* Billede og tekst */
+.virksomhed-image, .organisation-image, .privat-image {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.virksomhed-image img, .organisation-image img, .privat-image img {
+    width: 100%;
+    max-width: 250px; /* Ens størrelse på billederne */
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.virksomhed-image a:hover img,
+.organisation-image a:hover img,
+.privat-image a:hover img {
+    transform: scale(1.1); /* Hover-effekt for alle billeder */
+}
+
+.virksomhed-image p, .organisation-image p, .privat-image p {
+    font-size: 1.2rem;
+    color: #388e3c;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Velkomstbesked for logget ind bruger */
+.virksomhed-logged-in, .organisation-logged-in, .privat-logged-in {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.virksomhed-logged-in p, .organisation-logged-in p, .privat-logged-in p {
+    font-size: 1.5rem;
+    color: #388e3c;
+}
+
+/* Tilbage til forsiden link */
+.back-to-home {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #388e3c;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #e8f5e9;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-to-home:hover {
+    background-color: #388e3c;
+    color: white;
+}
+
+/* Responsivt design for mindre skærme */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .links-genveje {
+        text-align: left;
+    }
+
+    .links-genveje li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .virksomhed-image img, .organisation-image img, .privat-image img {
+        max-width: 200px; /* Justeret størrelse på billeder for mindre skærme */
+    }
+}
+
+/* Specifik stil for Privat Bruger */
+.privatbruger-con {
+    /* Hvid baggrund er allerede defineret i hoved-containeren */
+}
+
+.privat-image p {
+    color: #388e3c;
+}
+
+/* Specifik stil for Organisation */
+.organisation-con {
+    /* Hvid baggrund er allerede defineret i hoved-containeren */
+}
+
+.organisation-image {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.organisation-image p {
+    color: #388e3c;
+}
+
+/* Specifik stil for Virksomhed */
+.virksomhed-con {
+    /* Hvid baggrund er allerede defineret i hoved-containeren */
+}
+
+.virksomhed-image p {
+    color: #388e3c;
+}
