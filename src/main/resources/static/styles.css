@@ -468,3 +468,138 @@ h2 {
 .virksomhed-image p {
     color: #388e3c;
 }
+
+/* Opslagstavle */
+
+/* Modal styles */
+.modal {
+    display: none;
+}
+
+/* Hides the modal when the checkbox is not checked */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.modal-content .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+    color: black;
+}
+
+/* Checkbox trick to open modal */
+.modal-checkbox:checked + .modal-overlay {
+    display: block;
+}
+
+.modal-checkbox:checked + .modal-overlay .modal-content {
+    display: block;
+}
+
+.maaltid-kort {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Hide checkbox inputs */
+.modal-checkbox {
+    display: none;
+}
+
+/* Knap */
+button {
+    background-color: #4CAF50; / Grøn farve /
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; / Mørkere grøn /
+}
+
+/* Container til felterne */
+.maaltid-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Styling af hvert kort */
+.maaltid-kort {
+    background-color: #e8f5e9; / Lys grøn /
+    border: 2px solid #81c784; / Mellemgrøn kant /
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.maaltid-kort:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Legenden (overskriften på kortet) */
+.maaltid-kort legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+/* Tekst inde i kortene */
+.maaltid-kort br {
+    margin-bottom: 10px;
+
+    .dropdown-filter {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .dropdown-filter select {
+        padding: 10px 15px;
+        font-size: 1em;
+        border-radius: 8px;
+        border: 2px solid #4CAF50;
+        background-color: #f1fff1;
+        color: #333;
+    }
+}

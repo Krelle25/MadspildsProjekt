@@ -1,28 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <title>Opslagstavle - Danmark Mod Madspild</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<h1>Danmark Mod Madspild</h1>
+
+<header>
+    <h1>Danmark Mod Madspild</h1>
+</header>
 <h2>Opslagstavle</h2>
-<button>Filter</button>
-<fieldset>
-    <legend>Red et måltid</legend>
-    Diamond Slice Blågårdsgade<br>
-    2 slices<br>
-    39kr<br>
-    2/4 - 2025.
-</fieldset>
-<fieldset>
-    <legend>Grønt og Gratis</legend>
-    Økologiske æbler<br>
-    2 Kilo<br>
-    Gratis<br>
-    2/4 - 2025.
-</fieldset>
+
+<div class="dropdown-filter">
+    <select id="filter">
+        <option value="alle">Vis alle</option>
+        <option value="gratis">Kun gratis</option>
+        <option value="betalt">Kun med pris</option>
+    </select>
+</div>
+
+<div class="maaltid-wrapper" id="kort-container">
+    <!-- Grønt og Gratis opslag -->
+    <label class="maaltid-kort" for="modal-checkbox1">
+        <fieldset>
+            <legend>Grønt og Gratis</legend>
+            Økologiske æbler<br>
+            2 Kilo<br>
+            Gratis<br>
+            2/4 - 2025.
+        </fieldset>
+    </label>
+    <input type="checkbox" id="modal-checkbox1" class="modal-checkbox">
+
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('modal-checkbox1').checked = false;">&times;</span>
+            <h3>Grønt og Gratis</h3>
+            <p>Økologiske æbler - 2 Kilo - Gratis</p>
+            <p>Beskrivelse: Disse æbler er økologiske og gratis tilgængelige den 2/4 - 2025.</p>
+        </div>
+    </div>
+
+    <!-- Red et måltid opslag -->
+    <label class="maaltid-kort" for="modal-checkbox2">
+        <fieldset>
+            <legend>Red et måltid</legend>
+            Diamond Slice Blågårdsgade<br>
+            2 slices<br>
+            39kr<br>
+            2/4 - 2025.
+        </fieldset>
+    </label>
+    <input type="checkbox" id="modal-checkbox2" class="modal-checkbox">
+
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('modal-checkbox2').checked = false;">&times;</span>
+            <h3>Red et måltid</h3>
+            <p>Diamond Slice Blågårdsgade - 2 slices - 39kr</p>
+            <p>Beskrivelse: Få 2 slices pizza fra Diamond Slice i Blågårdsgade for 39kr. Tilgængeligt den 2/4 - 2025.</p>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
