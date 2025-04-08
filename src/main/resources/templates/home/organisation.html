@@ -7,54 +7,47 @@
 </head>
 <body class="organisation">
 
-<main class="organisation-con">
-    <h1>Organisation</h1>
-    <h2>Vil din organisation være med til at mindske madspild?</h2>
-
-    <ul class="links-genveje" th:if="${session.loggedIn} == null">
-        <li><a href="organisationinfo">Information om madpsild</a></li>
-        <li><a href="login">Login</a></li>
-        <li><a href="opret">Registrer</a></li>
-    </ul>
-
-    <div th:if="${session.loggedIn}" class="auth-links">
-        <!-- Profile Icon and Dropdown -->
-        <div class="profile-dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
-            <img src="/images/BrugerIcon.png" alt="Profile Icon" class="profile-icon">
-            <div class="dropdown-content" id="dropdownMenu">
-                <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
-                <a href="/profile" class="btn-dropdown-profil">Profil</a>
-                <a href="/logout" class="btn-logout">Log ud</a>
-            </div>
-        </div>
+<header>
+    <div th:if="${session.loggedIn} == null" class="auth-links">
+        <a href="/login" class="btn">Login</a>
+        <a href="/opret" class="btn">Opret</a>
     </div>
 
-    <ul class="links-genveje">
-            <li><a href="organisationinfo">Information om madpsild</a></li>
-            <li><a href="opslagstavle.html">Se opslagstavle</a></li>
-            <li><a href="opretevent.html">Opret event</a></li>
-            <li><a href="logout">Log ud</a></li>
-        </ul>
-    </div>
-    <div class="madspild-organisation">
-        <a href="#">
-            <img src="/images/madspild-organisation.jpg" alt="organisation" class="organisation-image">
-            <p>Virksomhed</p>
-        </a>
+    <h1 class="title">Danmark Mod Madspild</h1>
+</header>
+
+<main>
+    <h2>Organisation</h2>
+
+    <div th:if="${session.loggedIn} == null">
+        <h3>Vil du organisation lære om at undgå madspild?</h3>
+        <section class="rolle-valg">
+            <a href="/organisationinfo" class="rolle-link">
+                <img src="/images/" alt="Madspild Tips">
+                <p>Sådan gør din organisation en forskel</p>
+            </a>
+        </section>
     </div>
 
-        <p><a href="/">Tilbage til forsiden</a></p>
+    <div th:if="${session.loggedIn} and ${session.brugerType} == 'organisation'">
+        <h3>Hvad vil I gerne?</h3>
+        <section class="rolle-valg">
+            <a href="/organisationinfo" class="rolle-link">
+                <img src="/images/" alt="Madspild Tips">
+                <p>Tips: Undgå madspild</p>
+            </a>
+            <a href="/opslagstavle" class="rolle-link">
+                <img src="/images/" alt="Opslagstavle">
+                <p>Se opslagstavle</p>
+            </a>
+            <a href="/opretevent" class="rolle-link">
+                <img src="/images/" alt="Event">
+                <p>Opret et event</p>
+            </a>
+        </section>
+    </div>
+
+    <p><a href="/" class="back-to-home">Tilbage til forsiden</a></p>
 </main>
-<script>
-    // Toggle dropdown visibility based on mouseover (true to show, false to hide)
-    function toggleDropdown(show) {
-        var dropdown = document.getElementById('dropdownMenu');
-        if (show) {
-            dropdown.classList.add('show');
-        } else {
-            dropdown.classList.remove('show');
-        }
-    }
-</script>
 </body>
 </html>
