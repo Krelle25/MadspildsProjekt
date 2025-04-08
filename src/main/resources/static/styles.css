@@ -1,4 +1,9 @@
-/* Styles for startsiden/forsiden */
+                        /* Styles for startsiden/forsiden */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: Cambria;
@@ -8,7 +13,7 @@ body {
     padding: 0;
 }
 
-.index main {
+main {
     padding-bottom: 6em;
 }
 
@@ -19,14 +24,12 @@ header {
     text-align: center;
 }
 
-/* Overskrift i midten */
-header .title {
+.title {
     font-size: 3em;
     color: white;
     margin: 0;
 }
 
-/* Login/opret/velkomst oppe i højre hjørne */
 .auth-links {
     position: absolute;
     top: 1em;
@@ -132,7 +135,7 @@ footer {
     }
 }
 
-/* Styles for login */
+                                /* Styles for login */
 
 .login {
     background-color: whitesmoke;
@@ -205,7 +208,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Styles for opret/registrer */
+                                /* Styles for opret/registrer */
 
 .opret {
     background-color: whitesmoke;
@@ -296,15 +299,6 @@ footer {
     text-decoration: underline;
 }
 
-/* Generelle stilarter for kroppen */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4; /* Lys grå baggrund for hele siden */
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
 /* Hoved container for alle sektioner */
 .virksomhed-con, .organisation-con, .privatbruger-con {
     width: 90%;
@@ -314,20 +308,6 @@ body {
     background-color: #fff; /* Hvid baggrund for alle sektioner */
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Titel og undertitel */
-h1 {
-    font-size: 3rem;
-    color: #388e3c;
-    text-align: center;
-}
-
-h2 {
-    font-size: 1.5rem;
-    color: #4caf50;
-    text-align: center;
-    margin-bottom: 30px;
 }
 
 /* Links og genveje */
@@ -437,18 +417,9 @@ h2 {
     }
 }
 
-/* Specifik stil for Privat Bruger */
-.privatbruger-con {
-    /* Hvid baggrund er allerede defineret i hoved-containeren */
-}
-
-.privat-image p {
-    color: #388e3c;
-}
-
-/* Specifik stil for Organisation */
-.organisation-con {
-    /* Hvid baggrund er allerede defineret i hoved-containeren */
+                            /* PRIVATBRUGER-SIDE */
+body.privatbruger {
+    background-color: #f4f4f4;
 }
 
 .organisation-image {

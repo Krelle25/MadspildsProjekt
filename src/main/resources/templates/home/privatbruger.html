@@ -7,36 +7,57 @@
 </head>
 <body class="privatbruger">
 
-<main class="privatbruger-con">
+<header>
+    <div th:if="${session.loggedIn} == null" class="auth-links">
+        <a href="/login" class="btn">Login</a>
+        <a href="/opret" class="btn">Opret</a>
+    </div>
 
-    <h1>Privat Bruger</h1>
-    <h2>Undgå madspild og køb et måltid eller tilmeld dig gratis event!</h2>
+    <div th:if="${session.loggedIn}" class="auth-links">
+        <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
+        <a href="/logout" class="btn-logout">Log ud</a>
+    </div>
 
-    <ul class="links-genveje" th:if="${session.loggedIn} == null">
-        <li><a href="/privatinfo">Tips: Undgå madspild</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/opret">Registrer</a></li>
-    </ul>
+    <h1 class="title">Danmark Mod Madspild</h1>
+</header>
+
+<main>
+    <h2>Privat Bruger</h2>
+
+    <div th:if="${session.loggedIn} == null">
+        <h3>Vil du lære at undgå madspild?</h3>
+        <section class="rolle-valg">
+            <a href="/privatinfo" class="rolle-link">
+                <img src="/images/Privat%20Bruger%20-%20Tips%20til%20at%20undgå%20madspild.png" alt="Madspild Tips">
+                <p>Tips: Undgå madspild</p>
+            </a>
+        </section>
+    </div>
 
     <div th:if="${session.loggedIn} and ${session.brugerType} == 'privatbruger'">
-        <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
-
-        <ul class="links-genveje">
-            <li><a href="/privatinfo">Tips: Undgå madspild</a></li>
-            <li><a href="/opslagstavle">Se opslagstavle</a></li>
-            <li><a href="/tilmeldevent">Tilmeld dig et event</a></li>
-            <li><a href="/logout">Log ud</a></li>
-        </ul>
+        <h3>Hvad vil du gerne?</h3>
+        <section class="rolle-valg">
+            <a href="/privatinfo" class="rolle-link">
+                <img src="/images/Privat%20Bruger%20-%20Tips%20til%20at%20undgå%20madspild.png" alt="Madspild Tips">
+                <p>Tips: Undgå madspild</p>
+            </a>
+            <a href="/opslagstavle" class="rolle-link">
+                <img src="/images/opslagstavle.jpg" alt="Opslagstavle">
+                <p>Se opslagstavle</p>
+            </a>
+            <a href="/tilmeldevent" class="rolle-link">
+                <img src="/images/event.jpg" alt="Event">
+                <p>Tilmeld dig et event</p>
+            </a>
+        </section>
     </div>
-    <div class="privat-image">
-        <a href="#">
-            <img src="/images/madspild-privatbruger.jpg" alt="privatbruger" class="privat-image">
-            <p>Virksomhed</p>
-        </a>
-    </div>
 
-    <p><a href="/">Tilbage til forsiden</a></p>
+    <p><a href="/" class="back-to-home">Tilbage til forsiden</a></p>
 </main>
+
+<footer>
+    Copyright © DanmarkModMadspild ApS. All Rights Reserved.
+</footer>
 
 </body>
 </html>
