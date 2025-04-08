@@ -2,42 +2,62 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virksomhed - Danmark Mod Madspild</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="virksomhed">
 
-<main class="virksomhed-con">
-    <h1>Virksomhed</h1>
-    <h2>Dóner overskudsmad eller samarbejd om madspild</h2>
-
-    <ul class="links-genveje">
-        <li><a href="virksomhedinfo">Sådan gør din virksomhed en forskel</a></li>
-        <li><a href="login">Login</a></li>
-        <li><a href="opret">Registrer virksomhed</a></li>
-    </ul>
-
-    <div class="virksomhed-image">
-        <a href="#">
-            <img src="/images/madspild-virksomhed.png" alt="Virksomhed" class="virksomhed-img">
-            <p>Virksomhed</p>
-        </a>
+<header>
+    <div th:if="${session.loggedIn} == null" class="auth-links">
+        <a href="/login" class="btn">Login</a>
+        <a href="/opret" class="btn">Opret</a>
     </div>
 
-    <div class="virksomhed-logged-in" th:if="${session.loggedIn} and ${session.brugerType} == 'virksomhed'">
-        <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
+    <div th:if="${session.loggedIn}" class="auth-links">
+        <p>Velkommen, <span th:text="${session.brugernavn}">Virksomhed</span>!</p>
+        <a href="/logout" class="btn-logout">Log ud</a>
+    </div>
 
-        <ul class="links-genveje">
-            <li><a href="virksomhedinfo">Sådan gør din virksomhed en forskel</a></li>
-            <li><a href="opslagstavle">Se opslagstavle</a></li>
-            <li><a href="opretopslag">Opret opslag</a></li>
-            <li><a href="logout">Log ud</a></li>
-        </ul>
+    <h1 class="title">Danmark Mod Madspild</h1>
+</header>
+
+<main>
+    <h2>Virksomhed</h2>
+
+    <div th:if="${session.loggedIn} == null">
+        <h3>Muligheder for din virksomhed</h3>
+        <section class="rolle-valg">
+            <a href="/virksomhedinfo" class="rolle-link">
+                <img src="/images/Virksomhed%20-%20Tips%20til%20at%20undgå%20madspild.png" alt="Madspild Tips">
+                <p>Sådan gør din virksomhed en forskel</p>
+            </a>
+        </section>
+    </div>
+
+    <div th:if="${session.loggedIn} and ${session.brugerType} == 'virksomhed'">
+        <h3>Hvad vil I gerne?</h3>
+        <section class="rolle-valg">
+            <a href="/virksomhedinfo" class="rolle-link">
+                <img src="/images/Virksomhed%20-%20Tips%20til%20at%20undgå%20madspild.png">
+                <p>Sådan gør din virksomhed en forskel</p>
+            </a>
+            <a href="/opslagstavle" class="rolle-link">
+                <img src="" alt="Opslagstavle">
+                <p>Se opslagstavle</p>
+            </a>
+            <a href="/opretopslag" class="rolle-link">
+                <img src="" alt="Opslag">
+                <p>Opret opslag</p>
+            </a>
+        </section>
     </div>
 
     <p><a href="/" class="back-to-home">Tilbage til forsiden</a></p>
 </main>
+
+<footer>
+    Copyright © DanmarkModMadspild ApS. All Rights Reserved.
+</footer>
 
 </body>
 </html>

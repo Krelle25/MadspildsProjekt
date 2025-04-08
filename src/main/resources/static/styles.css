@@ -338,6 +338,84 @@ footer {
     color: #fff;
 }
 
+                        /* PRIVATBRUGER-SIDE */
+body.privatbruger {
+    background-color: #f4f4f4;
+}
+
+/* Layout til privatinfo-side */
+body.privatinfo-side {
+    background-color: #f9fbf9;
+    font-family: Cambria, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.privatinfo-container {
+    max-width: 900px;
+    margin: 3em auto;
+    padding: 2em;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.privatinfo-container h2 {
+    font-size: 1.8em;
+    color: #2e7d32;
+    margin-bottom: 0.5em;
+}
+
+.privatinfo-container p,
+.privatinfo-container li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 1em;
+}
+
+.info-blok {
+    margin-bottom: 3em;
+    text-align: left;
+}
+
+.info-blok ul {
+    padding-left: 1.5em;
+}
+
+.info-blok li {
+    margin-bottom: 0.8em;
+}
+
+.back-to-home {
+    display: inline-block;
+    margin-top: 2em;
+    font-size: 1.1em;
+    color: #2e7d32;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #2e7d32;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.back-to-home:hover {
+    background-color: #2e7d32;
+    color: white;
+}
+
+/* Responsivt */
+@media (max-width: 600px)
+{
+    .privatinfo-container {
+        padding: 1.2em;
+    }
+
+    .privatinfo-container h2 {
+        font-size: 1.5em;
+    }
+}
+
 /* Billede og tekst */
 .virksomhed-image, .organisation-image, .privat-image {
     text-align: center;
@@ -374,6 +452,45 @@ footer {
 .virksomhed-logged-in p, .organisation-logged-in p, .privat-logged-in p {
     font-size: 1.5rem;
     color: #388e3c;
+}
+
+body.virksomhedinfo-body {
+    background-color: #f7fdf8;
+    font-family: 'Cambria', serif;
+    padding: 2em;
+    color: #333;
+}
+
+.virksomhedinfo {
+    max-width: 900px;
+    margin: auto;
+    background: #ffffff;
+    padding: 3em;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.virksomhedinfo h1 {
+    font-size: 2.8rem;
+    color: #2e7d32;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.virksomhedinfo h2 {
+    font-size: 1.6rem;
+    margin-top: 2em;
+    color: #388e3c;
+}
+
+.virksomhedinfo p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0.6em 0;
+}
+
+.virksomhedinfo strong {
+    color: #2e7d32;
 }
 
 /* Tilbage til forsiden link */
@@ -415,11 +532,6 @@ footer {
     .virksomhed-image img, .organisation-image img, .privat-image img {
         max-width: 200px; /* Justeret størrelse på billeder for mindre skærme */
     }
-}
-
-                            /* PRIVATBRUGER-SIDE */
-body.privatbruger {
-    background-color: #f4f4f4;
 }
 
 .organisation-image {
