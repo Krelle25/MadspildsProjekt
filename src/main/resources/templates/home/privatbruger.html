@@ -13,16 +13,23 @@
         <a href="/opret" class="btn">Opret</a>
     </div>
 
-    <div th:if="${session.loggedIn}" class="auth-links">
-        <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
-        <a href="/logout" class="btn-logout">Log ud</a>
-    </div>
-
     <h1 class="title">Danmark Mod Madspild</h1>
 </header>
 
 <main>
     <h2>Privat Bruger</h2>
+
+    <div th:if="${session.loggedIn}" class="auth-links">
+        <!-- Profile Icon and Dropdown -->
+        <div class="profile-dropdown" onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+            <img src="/images/BrugerIcon.png" alt="Profile Icon" class="profile-icon">
+            <div class="dropdown-content" id="dropdownMenu">
+                <p>Velkommen, <span th:text="${session.brugernavn}">Bruger</span>!</p>
+                <a href="/profile" class="btn-dropdown-profil">Profil</a>
+                <a href="/logout" class="btn-logout">Log ud</a>
+            </div>
+        </div>
+    </div>
 
     <div th:if="${session.loggedIn} == null">
         <h3>Vil du lære at undgå madspild?</h3>
@@ -58,6 +65,17 @@
 <footer>
     Copyright © DanmarkModMadspild ApS. All Rights Reserved.
 </footer>
+<script>
+    // Toggle dropdown visibility based on mouseover (true to show, false to hide)
+    function toggleDropdown(show) {
+        var dropdown = document.getElementById('dropdownMenu');
+        if (show) {
+            dropdown.classList.add('show');
+        } else {
+            dropdown.classList.remove('show');
+        }
+    }
+</script>
 
 </body>
 </html>
