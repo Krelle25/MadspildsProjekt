@@ -1,5 +1,5 @@
 package com.example.madspildsprojekt.controller;
-
+/*test*/
 import com.example.madspildsprojekt.model.Bruger;
 import com.example.madspildsprojekt.model.BrugerForm;
 import com.example.madspildsprojekt.service.BrugerService;
