@@ -25,6 +25,18 @@
         </div>
     </div>
 
+    <script>
+        // Toggle dropdown visibility based on mouseover (true to show, false to hide)
+        function toggleDropdown(show) {
+            var dropdown = document.getElementById('dropdownMenu');
+            if (show) {
+                dropdown.classList.add('show');
+            } else {
+                dropdown.classList.remove('show');
+            }
+        }
+    </script>
+
     <h1 class="title">Danmark Mod Madspild</h1>
 </header>
 
@@ -49,18 +61,6 @@
 </main>
 
 <footer>Copyright © DanmarkModMadspild ApS. All Rights Reserved.</footer>
-
-<script>
-    // Toggle dropdown visibility based on mouseover (true to show, false to hide)
-    function toggleDropdown(show) {
-        var dropdown = document.getElementById('dropdownMenu');
-        if (show) {
-            dropdown.classList.add('show');
-        } else {
-            dropdown.classList.remove('show');
-        }
-    }
-</script>
 
 </body>
 </html>
