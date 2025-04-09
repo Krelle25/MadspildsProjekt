@@ -5,34 +5,48 @@
   <title>Title</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body class="opretevent">
+<body class="opretevent-side">
+
 <header>
-  <h1>Danmark Mod Madspild</h1>
-  <p>Opret event</p>
+  <h1 class="title">Danmark Mod Madspild</h1>
 </header>
 
-<main>
-  <form action="/opret" method="post">
-    <label for="opslag overskrift">Titel</label>
-    <input type="text" id="opslag overskrift" name="opslag" required>
+<main class="opret-event-container">
+  <h2>Opret et event</h2>
+  <p class="intro-tekst">Invitér folk til at deltage i dit event med overskudsmad eller inspiration til mindre madspild.</p>
 
-    <p></p><label for="event info">Beskrivelse af event</label>
-    <input type="Opretevent" id="event info" name="info" required><p></p>
+  <form action="/opretevent" method="post" class="event-form">
 
-    <label for="antal maaltider">Antal produkter/måltider</label>
-    <input type="Opretevent" id="antal maaltider" name="antal" required>
+    <div class="input-box">
+      <label for="titel">Titel</label>
+      <input type="text" id="titel" name="titel" placeholder="F.eks. 'Gratis gryderet i parken'" required>
+    </div>
 
-    <p></p> <label for="dato">Dato</label>
-    <input type="Opretevent" id="dato" name="dato" required><p></p>
+    <div class="input-box">
+      <label for="beskrivelse">Beskrivelse</label>
+      <textarea id="beskrivelse" name="beskrivelse" placeholder="Skriv en kort beskrivelse..." required></textarea>
+    </div>
 
-    <label for="tidspunkt">Tidspunkt</label>
-    <input type="Opretevent" id="tidspunkt" name="tidspunkt" required>
+    <div class="input-box">
+      <label for="dato">Dato</label>
+      <input type="date" id="dato" name="dato" required>
+    </div>
 
+    <div class="input-box">
+      <label for="tid">Tidspunkt</label>
+      <input type="time" id="tid" name="tid" required>
+    </div>
+
+    <div class="input-box">
+      <label for="sted">Lokation</label>
+      <input type="text" id="sted" name="sted" placeholder="F.eks. Enghaveparken, København" required>
+    </div>
+
+    <button type="submit">Opret Event</button>
   </form>
-  <p></p><button type="submit">Slå op</button><p></p>
 
+  <p><a href="/" class="back-to-home">Tilbage til forsiden</a></p>
 
-  <p><a href="/">Tilbage til forsiden</a></p>
 </main>
 
 <footer>

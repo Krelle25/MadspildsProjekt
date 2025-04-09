@@ -6,32 +6,46 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="opretopslag">
+
 <header>
-    <h1>Danmark Mod Madspild</h1>
-    <p>Opret produkt</p>
+    <h1 class="title">Danmark Mod Madspild</h1>
 </header>
 
-<main>
-    <form action="/opret" method="post">
-        <label for="opslag overskrift">Titel</label>
-        <input type="text" id="opslag overskrift" name="opslag" required>
+<main class="opret-opslag-container">
+    <h2>Opret opslag</h2>
+    <p class="intro">Udfyld informationerne nedenfor og del overskudsmad med andre.</p>
 
-        <p></p><label for="opslag info">Beskrivelse af produkt</label>
-        <input type="Opretopslag" id="opslag info" name="info" required><p></p>
+    <form action="/opret" method="post" class="opret-form">
 
-        <label for="antal maaltider">Antal produkter/måltider</label>
-        <input type="Opretopslag" id="antal maaltider" name="antal" required>
+        <div class="input-box">
+            <label for="titel">Titel</label>
+            <input type="text" id="titel" name="opslag" placeholder="F.eks. 'Overskydende mad fra café'" required>
+        </div>
 
-       <p></p> <label for="dato">Dato</label>
-        <input type="Opretopslag" id="dato" name="dato" required><p></p>
+        <div class="input-box">
+            <label for="info">Beskrivelse</label>
+            <textarea id="info" name="info" placeholder="Skriv en kort beskrivelse..." required></textarea>
+        </div>
 
-        <label for="tidspunkt">Tidspunkt</label>
-        <input type="Opretopslag" id="tidspunkt" name="tidspunkt" required>
+        <div class="input-box">
+            <label for="antal">Antal produkter/måltider</label>
+            <input type="number" id="antal" name="antal" placeholder="F.eks. 5" required>
+        </div>
 
+        <div class="input-box">
+            <label for="dato">Dato</label>
+            <input type="date" id="dato" name="dato" required>
+        </div>
+
+        <div class="input-box">
+            <label for="tidspunkt">Tidspunkt</label>
+            <input type="time" id="tidspunkt" name="tidspunkt" required>
+        </div>
+
+        <button type="submit">Slå op</button>
     </form>
-        <p></p><button type="submit">Slå op</button><p></p>
 
-    <p><a href="/">Tilbage til forsiden</a></p>
+    <p><a href="/" class="back-to-home">Tilbage til forsiden</a></p>
 </main>
 
 <footer>

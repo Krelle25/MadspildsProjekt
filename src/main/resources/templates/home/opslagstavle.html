@@ -5,12 +5,19 @@
     <title>Opslagstavle - Danmark Mod Madspild</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="opslagstavle-side">
 
 <header>
-    <h1>Danmark Mod Madspild</h1>
+    <h1 class="title">Danmark Mod Madspild</h1>
 </header>
-<h2>Opslagstavle</h2>
+
+<main class="opslagstavle-container">
+
+    <section class="opslagstavle-intro">
+        <h2>Opslagstavle</h2>
+        <p>Her finder du mad, der kan hentes gratis eller til en god pris – red mad og spar penge.</p>
+    </section>
+
 
 <div class="dropdown-filter">
     <select id="filter">
@@ -22,9 +29,9 @@
 
 <div class="maaltid-wrapper" id="kort-container">
     <!-- Grønt og Gratis opslag -->
-    <label class="maaltid-kort" for="modal-checkbox1">
+    <label class="maaltid-kort green" for="modal-checkbox1">
         <fieldset>
-            <legend>Grønt & Gratis</legend>
+            <legend>🍏 Grønt & Gratis</legend>
             Økologiske æbler<br>
             2 Kilo<br>
             Gratis<br>
@@ -43,9 +50,9 @@
     </div>
 
     <!-- Red et måltid opslag -->
-    <label class="maaltid-kort" for="modal-checkbox2">
+    <label class="maaltid-kort red" for="modal-checkbox2">
         <fieldset>
-            <legend>Red Et Måltid</legend>
+            <legend>🍕 Red Et Måltid</legend>
             Diamond Slice Blågårdsgade<br>
             2 slices<br>
             39kr<br>
@@ -65,6 +72,8 @@
 </div>
 
 <p><a href="/" class="back-to-home">Tilbage til forsiden</a></p>
+
+</main>
 
 <footer>
     Copyright © DanmarkModMadspild ApS. All Rights Reserved.

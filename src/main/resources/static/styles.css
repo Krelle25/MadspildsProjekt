@@ -272,6 +272,153 @@ body.organisationinfo-side {
     color: white;
 }
 
+.opslagstavle-intro {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.opslagstavle-intro h2 {
+    font-size: 2.5em;
+    color: green;
+}
+
+.opslagstavle-intro p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.opret-event-container {
+    max-width: 600px;
+    margin: 3em auto;
+    padding: 2em;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.opret-event-container h2 {
+    font-size: 2em;
+    color: green;
+    margin-bottom: 0.5em;
+}
+
+.opret-event-container .intro-tekst {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 1.5em;
+}
+
+.event-form .input-box {
+    background-color: white;
+    border: 1px solid lightgrey;
+    padding: 1em 1.2em;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.event-form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: green;
+}
+
+.event-form input,
+.event-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    border-radius: 6px;
+    border: 1px solid white;
+    font-size: 1em;
+    font-family: inherit;
+}
+
+.event-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.event-form button {
+    background-color: #6DCB85;
+    color: white;
+    padding: 0.8em;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.event-form button:hover {
+    background-color: green;
+}
+
+.opret-opslag-container {
+    max-width: 600px;
+    margin: 3em auto;
+    background: white;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.opret-form .input-box {
+    background-color: white;
+    border: 1px solid darkgrey;
+    padding: 1.2em;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.opret-form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: green;
+}
+
+.opret-form input,
+.opret-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    border-radius: 6px;
+    border: 1px solid white;
+    font-size: 1em;
+    font-family: inherit;
+}
+
+.opret-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.opret-form button {
+    width: 100%;
+    padding: 1em;
+    background-color: #6DCB85;
+    border: none;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.opret-form button:hover {
+    background-color: #6DCB85;
+}
+
+.opret-opslag-container .intro {
+    font-size: 1.1em;
+    margin-bottom: 2em;
+    color: #444;
+    text-align: center;
+}
+
 /* Modal styles */
 .modal {display: none; }
 .modal-checkbox { display: none; }
@@ -322,9 +469,19 @@ body.organisationinfo-side {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.maaltid-kort.green {
+    background-color: #e0f7ec;
+    border: 2px solid green;
+}
+
+.maaltid-kort.red {
+    background-color: #fff4f4;
+    border: 2px solid red;
+}
+
 .maaltid-kort:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .maaltid-kort legend {
@@ -344,6 +501,21 @@ body.organisationinfo-side {
     right: 20px;
 }
 
+.dropdown-filter select {
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 2px solid green;
+    background-color: white;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: border 0.2s;
+}
+
+.dropdown-filter select:focus {
+    border-color: #66bb6a;
+    outline: none;
+}
 
 .dropdown-content {
     display: none;
