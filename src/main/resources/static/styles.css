@@ -1,16 +1,14 @@
-                        /* Styles for startsiden/forsiden */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/*General font på alle sider*/
 body {
     font-family: Cambria;
     text-align: center;
     color: black;
-    margin: 0;
-    padding: 0;
 }
 
 main {
@@ -50,19 +48,19 @@ header {
 }
 
 .auth-links .btn {
-    background-color: #007f3f;
+    background-color: green;
 }
 
 .auth-links .btn:hover {
-    background-color: #005f2f;
+    background-color: darkgreen;
 }
 
 .auth-links .btn-logout {
-    background-color: #a30000;
+    background-color: red;
 }
 
 .auth-links .btn-logout:hover {
-    background-color: #750000;
+    background-color: darkred;
 }
 
 main h2 {
@@ -72,7 +70,7 @@ main h2 {
 
 main h3 {
     font-weight: normal;
-    color: #555;
+    color: dimgrey;
     margin-bottom: 2em;
 }
 
@@ -115,110 +113,23 @@ main h3 {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #2e2e2e;
+    background-color: #333;
     color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-@media (max-width: 768px) {
-    .rolle-valg {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .auth-links {
-        position: static;
-        margin-top: 1em;
-        justify-content: center;
-    }
-}
-
-                                /* Styles for login */
-
-.login {
+.login, .opret {
     background-color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height: 70vh;
 }
 
-.login-container {
-    background-color: white;
-    padding: 2.5em;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-}
-
-.login-container h1 {
-    margin-bottom: 1.2em;
-    font-size: 2em;
-    color: #6DCB85;
-}
-
-.login-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-.login-container input[type="text"],
-.login-container input[type="password"] {
-    padding: 0.8em;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-
-.login-container button {
-    padding: 0.8em;
-    background-color: green;
-    color: white;
-    font-size: 1em;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.login-container button:hover {
-    background-color: darkgreen;
-}
-
-.login-container p {
-    margin-top: 1em;
-    font-size: 0.95em;
-}
-
-.login-container .tilbage {
-    display: block;
-    margin-top: 0.8em;
-    font-size: 0.9em;
-    color: green;
-    text-decoration: none;
-}
-
-.login-container .tilbage:hover {
-    text-decoration: underline;
-}
-
-                                /* Styles for opret/registrer */
-
-.opret {
-    background-color: whitesmoke;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 79vh;
-}
-
-.opret-container {
+.login-container, .opret-container {
     background-color: white;
     padding: 2.5em;
     border-radius: 10px;
@@ -228,26 +139,30 @@ footer {
     text-align: center;
 }
 
+.login-container h1,
 .opret-container h1 {
     margin-bottom: 1.2em;
     font-size: 2em;
-    color: green;
+    color: #6DCB85;
 }
 
+.login-container form,
 .opret-container form {
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
 
-.opret-container input[type="text"],
-.opret-container input[type="password"] {
+.login-container input,
+.opret-container input {
     padding: 0.8em;
     font-size: 1em;
-    border: 1px solid #ccc;
+    border: 1px solid darkgrey;
     border-radius: 6px;
 }
 
+/* Ens styling for knapper */
+.login-container button,
 .opret-container button {
     padding: 0.8em;
     background-color: green;
@@ -260,33 +175,18 @@ footer {
     transition: background-color 0.2s ease;
 }
 
+.login-container button:hover,
 .opret-container button:hover {
     background-color: darkgreen;
 }
 
-.roller {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 0.5em;
-    text-align: left;
-}
-
-.roller {
-    font-weight: bold;
-    margin-bottom: 0.5em;
-}
-
-.roller legend {
-    font-weight: bold;
-    margin-bottom: 0.5em;
-}
-
+.login-container p,
 .opret-container p {
-    margin-bottom: 1em;
+    margin-top: 1em;
     font-size: 0.95em;
 }
 
+.login-container .tilbage,
 .opret-container .tilbage {
     display: block;
     margin-top: 0.8em;
@@ -295,83 +195,41 @@ footer {
     text-decoration: none;
 }
 
-.opret-container .tilbage:hover {
-    text-decoration: underline;
+/* ✨ Radio buttons og fieldset til Opret */
+.roller {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 1em;
+    font-size: 0.95em;
 }
 
-/* Hoved container for alle sektioner */
-.virksomhed-con, .organisation-con, .privatbruger-con {
-    width: 90%;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #fff; /* Hvid baggrund for alle sektioner */
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+.roller legend {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    font-size: 1em;
 }
 
-/* Links og genveje */
-.links-genveje {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-    margin-bottom: 40px;
+.roller label {
+    margin-bottom: 0.5em;
 }
 
-.links-genveje li {
-    display: inline-block;
-    margin: 10px;
+body.privatinfo-side,
+body.virksomhedinfo-side,
+body.organisationinfo-side {
+    background-color: white;
 }
 
-.links-genveje a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #388e3c;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #e8f5e9;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.links-genveje a:hover {
-    background-color: #388e3c;
-    color: #fff;
-}
-
-                        /* PRIVATBRUGER-SIDE */
-body.privatbruger {
-    background-color: #f4f4f4;
-}
-
-/* Layout til privatinfo-side */
-body.privatinfo-side {
-    background-color: #f9fbf9;
-    font-family: Cambria, sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-.privatinfo-container {
+.privatinfo-container,
+.virksomhedinfo-container,
+.organisationinfo-container {
     max-width: 900px;
     margin: 3em auto;
     padding: 2em;
     background-color: white;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.privatinfo-container h2 {
-    font-size: 1.8em;
-    color: #2e7d32;
-    margin-bottom: 0.5em;
-}
-
-.privatinfo-container p,
-.privatinfo-container li {
-    font-size: 1.1em;
-    line-height: 1.7;
-    margin-bottom: 1em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .info-blok {
@@ -379,262 +237,71 @@ body.privatinfo-side {
     text-align: left;
 }
 
-.info-blok ul {
-    padding-left: 1.5em;
+.info-blok h2 {
+    font-size: 1.8em;
+    color: green;
+    margin-bottom: 0.5em;
 }
 
+.info-blok p,
 .info-blok li {
-    margin-bottom: 0.8em;
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 1em;
+}
+
+.info-blok ul {
+    padding-left: 1.5em;
 }
 
 .back-to-home {
     display: inline-block;
     margin-top: 2em;
     font-size: 1.1em;
-    color: #2e7d32;
+    color: green;
     text-decoration: none;
     padding: 10px 20px;
-    border: 2px solid #2e7d32;
+    border: 2px solid green;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .back-to-home:hover {
-    background-color: #2e7d32;
+    background-color: green;
     color: white;
 }
-
-/* Responsivt */
-@media (max-width: 600px)
-{
-    .privatinfo-container {
-        padding: 1.2em;
-    }
-
-    .privatinfo-container h2 {
-        font-size: 1.5em;
-    }
-}
-
-/* Billede og tekst */
-.virksomhed-image, .organisation-image, .privat-image {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.virksomhed-image img, .organisation-image img, .privat-image img {
-    width: 100%;
-    max-width: 250px; /* Ens størrelse på billederne */
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.virksomhed-image a:hover img,
-.organisation-image a:hover img,
-.privat-image a:hover img {
-    transform: scale(1.1); /* Hover-effekt for alle billeder */
-}
-
-.virksomhed-image p, .organisation-image p, .privat-image p {
-    font-size: 1.2rem;
-    color: #388e3c;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-/* Velkomstbesked for logget ind bruger */
-.virksomhed-logged-in, .organisation-logged-in, .privat-logged-in {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.virksomhed-logged-in p, .organisation-logged-in p, .privat-logged-in p {
-    font-size: 1.5rem;
-    color: #388e3c;
-}
-
-body.virksomhedinfo-body {
-    background-color: #f7fdf8;
-    font-family: 'Cambria', serif;
-    padding: 2em;
-    color: #333;
-}
-
-.virksomhedinfo {
-    max-width: 900px;
-    margin: auto;
-    background: #ffffff;
-    padding: 3em;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.virksomhedinfo h1 {
-    font-size: 2.8rem;
-    color: #2e7d32;
-    margin-bottom: 1em;
-    text-align: center;
-}
-
-.virksomhedinfo h2 {
-    font-size: 1.6rem;
-    margin-top: 2em;
-    color: #388e3c;
-}
-
-.virksomhedinfo p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0.6em 0;
-}
-
-.virksomhedinfo strong {
-    color: #2e7d32;
-}
-
-/* Tilbage til forsiden link */
-.back-to-home {
-    display: inline-block;
-    font-size: 1.2rem;
-    color: #388e3c;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #e8f5e9;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.back-to-home:hover {
-    background-color: #388e3c;
-    color: white;
-}
-
-/* Responsivt design for mindre skærme */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 1.3rem;
-    }
-
-    .links-genveje {
-        text-align: left;
-    }
-
-    .links-genveje li {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .virksomhed-image img, .organisation-image img, .privat-image img {
-        max-width: 200px; /* Justeret størrelse på billeder for mindre skærme */
-    }
-}
-
-.organisation-image {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.organisation-image p {
-    color: #388e3c;
-}
-
-/* Specifik stil for Virksomhed */
-.virksomhed-con {
-    /* Hvid baggrund er allerede defineret i hoved-containeren */
-}
-
-.virksomhed-image p {
-    color: #388e3c;
-}
-
-/* Opslagstavle */
 
 /* Modal styles */
-.modal {
-    display: none;
-}
-
-/* Hides the modal when the checkbox is not checked */
+.modal {display: none; }
+.modal-checkbox { display: none; }
 .modal-overlay {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
+.modal-checkbox:checked + .modal-overlay { display: block; }
 .modal-content {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fefefe;
+    background-color: white;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
+    border: 1px solid grey;
+    width: 80%; max-width: 600px;
 }
 
 .modal-content .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    color: darkgrey; float: right;
+    font-size: 28px; font-weight: bold;
     cursor: pointer;
 }
 
-.modal-content .close:hover,
-.modal-content .close:focus {
-    color: black;
-}
+.modal-content .close:hover { color: black }
 
-/* Checkbox trick to open modal */
-.modal-checkbox:checked + .modal-overlay {
-    display: block;
-}
-
-.modal-checkbox:checked + .modal-overlay .modal-content {
-    display: block;
-}
-
-.maaltid-kort {
-    cursor: pointer;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-/* Hide checkbox inputs */
-.modal-checkbox {
-    display: none;
-}
-
-/* Knap */
-button {
-    background-color: #4CAF50; / Grøn farve /
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1em;
-    margin: 20px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #45a049; / Mørkere grøn /
-}
-
-/* Container til felterne */
 .maaltid-wrapper {
     display: flex;
     gap: 20px;
@@ -643,10 +310,9 @@ button:hover {
     padding: 20px;
 }
 
-/* Styling af hvert kort */
 .maaltid-kort {
-    background-color: #e8f5e9; / Lys grøn /
-    border: 2px solid #81c784; / Mellemgrøn kant /
+    background-color: white;
+    border: 2px solid #6DCB85;
     border-radius: 12px;
     padding: 20px;
     width: 250px;
@@ -660,33 +326,13 @@ button:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Legenden (overskriften på kortet) */
 .maaltid-kort legend {
     font-weight: bold;
     font-size: 1.2em;
-    color: #2e7d32;
+    color: green;
     margin-bottom: 10px;
 }
 
-/* Tekst inde i kortene */
-.maaltid-kort br {
-    margin-bottom: 10px;
-
-    .dropdown-filter {
-        text-align: center;
-        margin: 20px 0;
-    }
-
-    .dropdown-filter select {
-        padding: 10px 15px;
-        font-size: 1em;
-        border-radius: 8px;
-        border: 2px solid #4CAF50;
-        background-color: #f1fff1;
-        color: #333;
-    }
-}
-                        /* Profile Icon */
 .profile-icon {
     width: 40px;
     height: 40px;
@@ -697,13 +343,13 @@ button:hover {
     right: 20px;
 }
 
-                        /* Dropdown content */
+
 .dropdown-content {
     display: none;
     position: absolute;
     top: 50px;
     right: 20px;
-    background-color: white;
+    background-color: ghostwhite;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -730,4 +376,52 @@ button:hover {
 
 .show {
     display: block;
+}
+
+@media (max-width: 768px) {
+    .rolle-valg {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .auth-links {
+        position: static;
+        margin-top: 1em;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2, .info-blok h2 {
+        font-size: 1.3rem;
+    }
+
+    .links-genveje {
+        text-align: left;
+    }
+
+    .links-genveje li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .virksomhed-image img,
+    .organisation-image img,
+    .privat-image img {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .info-blok h2 {
+        font-size: 1.5em;
+    }
+
+    .privatinfo-container,
+    .virksomhedinfo-container,
+    .organisationinfo-container {
+        padding: 1.2em;
+    }
 }
