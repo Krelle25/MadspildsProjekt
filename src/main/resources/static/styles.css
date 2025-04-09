@@ -338,7 +338,8 @@ body.organisationinfo-side {
     top: 20px;
     right: 20px;
 }
-                        /* Dropdown content */
+
+
 .dropdown-content {
     display: none;
     position: absolute;
