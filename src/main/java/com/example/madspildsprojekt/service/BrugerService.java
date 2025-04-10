@@ -9,6 +9,7 @@ import java.util.List;
 @Service
 public class BrugerService
 {
+    // Liste til opbevaring af brugere
     private final List<Bruger> brugere = new ArrayList<>();
 
     public void tilfoejBruger(Bruger bruger)
@@ -22,9 +23,9 @@ public class BrugerService
         {
             if (b.getBrugernavn().equals(brugernavn) && b.getAdgangskode().equals(adgangskode))
             {
-                return b;
+                return b; // Match fundet, returnerer brugerobjektet
             }
         }
-        return null;
+        return null; // Ingen match fundet, returnerer null
     }
 }

@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Opret opslag | Danmark Mod Madspild</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
-<body class="opretopslag">
+<body class="opretopslag-side">
 
 <header>
     <h1 class="title">Danmark Mod Madspild</h1>
@@ -13,9 +13,9 @@
 
 <main class="opret-opslag-container">
     <h2>Opret opslag</h2>
-    <p class="intro">Udfyld informationerne nedenfor og del overskudsmad med andre.</p>
+    <p class="intro-tekst">Udfyld informationerne nedenfor og del overskudsmad med andre.</p>
 
-    <form action="/opret" method="post" class="opret-form">
+    <form action="/opretopslag" method="post" class="opret-form">
 
         <div class="input-box">
             <label for="titel">Titel</label>
@@ -40,6 +40,11 @@
         <div class="input-box">
             <label for="tidspunkt">Tidspunkt</label>
             <input type="time" id="tidspunkt" name="tidspunkt" required>
+        </div>
+
+        <div class="input-box">
+            <label for="sted">Lokation</label>
+            <input type="text" id="sted" name="sted" placeholder="F.eks. Enghaveparken, København" required>
         </div>
 
         <button type="submit">Slå op</button>

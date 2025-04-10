@@ -1,25 +1,28 @@
+/* Basis-layout */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/*General font på alle sider*/
+/* General font på alle sider */
 body {
-    font-family: Cambria;
+    font-family: Cambria, serif;
     text-align: center;
     color: black;
+    background-color: white;
 }
 
 main {
     padding-bottom: 6em;
 }
 
+/* Overskrift */
 header {
     position: relative;
     background-color: #6DCB85;
     padding: 2em 1em;
-    text-align: center;
 }
 
 .title {
@@ -28,6 +31,18 @@ header {
     margin: 0;
 }
 
+/* Footeren nederst på siden */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Styles på autentifikation-links */
 .auth-links {
     position: absolute;
     top: 1em;
@@ -47,18 +62,22 @@ header {
     color: white;
 }
 
+/* Farve på Login & Opret */
 .auth-links .btn {
     background-color: green;
 }
 
+/* Hover-effekt på Login & Opret */
 .auth-links .btn:hover {
     background-color: darkgreen;
 }
 
+/* Farve på 'Log ud' */
 .auth-links .btn-logout {
     background-color: red;
 }
 
+/* Hover-effekt på 'Log ud' */
 .auth-links .btn-logout:hover {
     background-color: darkred;
 }
@@ -74,6 +93,7 @@ main h3 {
     margin-bottom: 2em;
 }
 
+/* Styling af rolle-valg */
 .rolle-valg {
     display: flex;
     justify-content: center;
@@ -100,6 +120,7 @@ main h3 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover-effekt på aktører */
 .rolle-link:hover img {
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
@@ -111,23 +132,13 @@ main h3 {
     font-weight: bold;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-
+/* Styling af login og registrer-siderne */
 .login, .opret {
     background-color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 75vh;
 }
 
 .login-container, .opret-container {
@@ -140,6 +151,7 @@ footer {
     text-align: center;
 }
 
+/* Overskrift på siderne */
 .login-container h1,
 .opret-container h1 {
     margin-bottom: 1.2em;
@@ -154,6 +166,7 @@ footer {
     gap: 1em;
 }
 
+/* Den grå farve rundt om kasserne */
 .login-container input,
 .opret-container input {
     padding: 0.8em;
@@ -176,6 +189,7 @@ footer {
     transition: background-color 0.2s ease;
 }
 
+/* Hover-effekt på login/registrer-knap */
 .login-container button:hover,
 .opret-container button:hover {
     background-color: darkgreen;
@@ -187,6 +201,7 @@ footer {
     font-size: 0.95em;
 }
 
+/* Farve på login/registrer-knap */
 .login-container .tilbage,
 .opret-container .tilbage {
     display: block;
@@ -196,7 +211,7 @@ footer {
     text-decoration: none;
 }
 
-/* ✨ Radio buttons og fieldset til Opret */
+/* Styling af opret/registrer-side samt radio-buttons og fieldset */
 .roller {
     display: flex;
     flex-direction: column;
@@ -216,19 +231,20 @@ footer {
     margin-bottom: 0.5em;
 }
 
+/* Baggrundsfarve til info-siderne */
 body.privatinfo-side,
 body.virksomhedinfo-side,
 body.organisationinfo-side {
     background-color: white;
 }
 
+/* Styling af info-blokke */
 .privatinfo-container,
 .virksomhedinfo-container,
 .organisationinfo-container {
     max-width: 900px;
     margin: 3em auto;
     padding: 2em;
-    background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
@@ -255,38 +271,139 @@ body.organisationinfo-side {
     padding-left: 1.5em;
 }
 
-.back-to-home {
-    display: inline-block;
-    margin-top: 2em;
-    font-size: 1.1em;
+/* Farve på overskrift 'Opslagstavle' */
+.opslagstavle-container h2 {
+    font-size: 2em;
     color: green;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 2px solid green;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    margin-bottom: 0.5em;
 }
 
-.back-to-home:hover {
-    background-color: green;
-    color: white;
-}
-
-.opslagstavle-intro {
-    text-align: center;
-    margin-bottom: 2em;
-}
-
-.opslagstavle-intro h2 {
-    font-size: 2.5em;
-    color: green;
-}
-
-.opslagstavle-intro p {
+/* Farve på under-rubrik "Her finder du mad..." */
+.opslagstavle-container .intro-tekst {
     font-size: 1.1em;
     color: #555;
+    margin-bottom: 1.5em;
 }
 
+.modal {
+    display: none;
+}
+
+.modal-checkbox {
+    display: none;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.modal-checkbox:checked + .modal-overlay
+{
+    display: block;
+}
+
+/* Modalens indhold (centreret midt på skærmen) */
+.modal-content {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid grey;
+    width: 80%; max-width: 600px;
+}
+
+/* Luk-knap i modalen (X-tegn) */
+.modal-content .close {
+    color: darkgrey; float: right;
+    font-size: 28px; font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hover-effekt for luk-knappen i modal */
+.modal-content .close:hover {
+    color: black
+}
+
+/* Container for opslag eller kort (madspildstilbud) */
+.maaltid-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Basis-styling af madkort */
+.maaltid-kort {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Farvevariationer på madkort */
+.maaltid-kort.green {
+    background-color: white;
+    border: 2px solid green;
+}
+
+.maaltid-kort.red {
+    background-color: white;
+    border: 2px solid red;
+}
+
+/* Hover-effekt på madkort */
+.maaltid-kort:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Overskrift på hvert madkort */
+.maaltid-kort legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: green;
+    margin-bottom: 10px;
+}
+/* Dropdown-filter (valg af opslagstype: gratis/betalt) */
+.dropdown-filter select {
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 2px solid green;
+    background-color: white;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: border 0.2s;
+}
+
+/* Fokus-effekt på dropdown-filter */
+.dropdown-filter select:focus {
+    border-color: #66bb6a;
+    outline: none;
+}
+
+/* Bruger-ikon i højre hjørne */
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Styling af Event-siden */
 .opret-event-container {
     max-width: 600px;
     margin: 3em auto;
@@ -296,18 +413,21 @@ body.organisationinfo-side {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Farve på overskrift 'Opslagstavle' */
 .opret-event-container h2 {
     font-size: 2em;
     color: green;
     margin-bottom: 0.5em;
 }
 
+/* Farve på under-rubrik */
 .opret-event-container .intro-tekst {
     font-size: 1.1em;
     color: #555;
     margin-bottom: 1.5em;
 }
 
+/* Styling af kassen 'Opret event' */
 .event-form .input-box {
     background-color: white;
     border: 1px solid lightgrey;
@@ -339,6 +459,7 @@ body.organisationinfo-side {
     min-height: 100px;
 }
 
+/* Farve på 'Opret Event'-knap */
 .event-form button {
     background-color: #6DCB85;
     color: white;
@@ -351,10 +472,12 @@ body.organisationinfo-side {
     transition: background-color 0.2s ease;
 }
 
+/* Hover-effekt på 'Opret Event' */
 .event-form button:hover {
     background-color: green;
 }
 
+/* Styling af Opret-siden (samme styling som Event-siden) */
 .opret-opslag-container {
     max-width: 600px;
     margin: 3em auto;
@@ -364,10 +487,22 @@ body.organisationinfo-side {
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
+.opret-opslag-container h2 {
+    font-size: 2em;
+    color: green;
+    margin-bottom: 0.5em;
+}
+
+.opret-opslag-container .intro-tekst {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 1.5em;
+}
+
 .opret-form .input-box {
     background-color: white;
-    border: 1px solid darkgrey;
-    padding: 1.2em;
+    border: 1px solid lightgrey;
+    padding: 1em 1.2em;
     border-radius: 10px;
     margin-bottom: 1.5em;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -396,127 +531,22 @@ body.organisationinfo-side {
 }
 
 .opret-form button {
-    width: 100%;
-    padding: 1em;
     background-color: #6DCB85;
-    border: none;
     color: white;
-    font-size: 1.1em;
+    padding: 0.8em;
+    border: none;
+    border-radius: 6px;
     font-weight: bold;
-    border-radius: 8px;
+    font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
 }
 
 .opret-form button:hover {
-    background-color: #6DCB85;
+    background-color: green;
 }
 
-.opret-opslag-container .intro {
-    font-size: 1.1em;
-    margin-bottom: 2em;
-    color: #444;
-    text-align: center;
-}
-
-/* Modal styles */
-.modal {display: none; }
-.modal-checkbox { display: none; }
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-
-.modal-checkbox:checked + .modal-overlay { display: block; }
-.modal-content {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 1px solid grey;
-    width: 80%; max-width: 600px;
-}
-
-.modal-content .close {
-    color: darkgrey; float: right;
-    font-size: 28px; font-weight: bold;
-    cursor: pointer;
-}
-
-.modal-content .close:hover { color: black }
-
-.maaltid-wrapper {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-.maaltid-kort {
-    background-color: white;
-    border: 2px solid #6DCB85;
-    border-radius: 12px;
-    padding: 20px;
-    width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', sans-serif;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.maaltid-kort.green {
-    background-color: #e0f7ec;
-    border: 2px solid green;
-}
-
-.maaltid-kort.red {
-    background-color: #fff4f4;
-    border: 2px solid red;
-}
-
-.maaltid-kort:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.maaltid-kort legend {
-    font-weight: bold;
-    font-size: 1.2em;
-    color: green;
-    margin-bottom: 10px;
-}
-
-.profile-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.dropdown-filter select {
-    padding: 10px 15px;
-    font-size: 1em;
-    border-radius: 8px;
-    border: 2px solid green;
-    background-color: white;
-    color: #333;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: border 0.2s;
-}
-
-.dropdown-filter select:focus {
-    border-color: #66bb6a;
-    outline: none;
-}
-
+/* Dropdown-content på bruger i hjørnet (når logget-ind) */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -530,6 +560,7 @@ body.organisationinfo-side {
     border-radius: 5px;
 }
 
+/* Styling af profil-menuen */
 .dropdown-content p {
     margin: 0;
     padding: 5px 0;
@@ -543,58 +574,31 @@ body.organisationinfo-side {
     border-radius: 3px;
 }
 
+/* Hover-effekt på bruger-icon */
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: whitesmoke;
 }
 
+/* Styling af 'Tilbage til forsiden' */
+.back-to-home {
+    display: inline-block;
+    margin-top: 2em;
+    font-size: 1.1em;
+    color: green;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid green;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover-effekt på 'Tilbage til forsiden' */
+.back-to-home:hover {
+    background-color: green;
+    color: white;
+}
+
+/* Klasse til at vise dropdown eller lignende dynamisk indhold via JavaScript */
 .show {
     display: block;
-}
-
-@media (max-width: 768px) {
-    .rolle-valg {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .auth-links {
-        position: static;
-        margin-top: 1em;
-        justify-content: center;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2, .info-blok h2 {
-        font-size: 1.3rem;
-    }
-
-    .links-genveje {
-        text-align: left;
-    }
-
-    .links-genveje li {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .virksomhed-image img,
-    .organisation-image img,
-    .privat-image img {
-        max-width: 200px;
-    }
-}
-
-@media (max-width: 600px) {
-    .info-blok h2 {
-        font-size: 1.5em;
-    }
-
-    .privatinfo-container,
-    .virksomhedinfo-container,
-    .organisationinfo-container {
-        padding: 1.2em;
-    }
 }
